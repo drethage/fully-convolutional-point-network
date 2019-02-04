@@ -1,0 +1,4 @@
+sessions/
+*.pyc
+*.o
+*.so
