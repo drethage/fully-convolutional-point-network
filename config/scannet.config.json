@@ -1,6 +1,27 @@
 {
     "dataset": {
-        "classes": ["wall", "floor", "cabinet", "bed", "chair", "sofa", "table", "door", "window", "bookshelf", "picture", "counter", "desk", "curtain", "refridgerator", "showercurtain", "toilet", "sink", "bathtub", "otherfurniture"],
+        "classes": [
+            "wall", 
+            "floor", 
+            "cabinet", 
+            "bed", 
+            "chair", 
+            "sofa", 
+            "table", 
+            "door", 
+            "window", 
+            "bookshelf", 
+            "picture", 
+            "counter", 
+            "desk", 
+            "curtain", 
+            "refridgerator", 
+            "showercurtain", 
+            "toilet", 
+            "sink", 
+            "bathtub", 
+            "otherfurniture"
+        ],
         "original_file_suffix": "_vh_clean_2.labels.ply",
         "path": "", 
         "refresh_cache": true, 
@@ -71,7 +92,7 @@
         "spatial_pool_radius": 1.5
     },  
     "training": {
-        "batch_size": 8, 
+        "batch_size": 4, 
         "checkpoint_path": "", 
         "checkpoints_to_keep": 1000, 
         "data_augmentation": {
@@ -108,6 +129,6 @@
         },
         "save_every_n_batches": 500,  
         "session_id": 0, 
-        "train_upsampling_only": true
+        "train_upsampling_only": false
     }
 }
