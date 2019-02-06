@@ -20,7 +20,7 @@ This structure is exemplified by the `scannet/` folder in `datasets/`.
 
 ### Uniform Sampling
 
-When training a fully-convolutional point network, it is advantageous, although not necessary, to ensure uniform point density throughout all items in the dataset. However, especially real-world acquired scans often exhibit non-uniform point density. To mitigate this, one can use the [ClassyVoxelizer](https://github.com/drethage/ClassyVoxelizer) tool to uniformly sample meshes. A 2cm sampling is recommended. During training, point-dropout augmentation is used to improve generalizability to non-uniform point density.
+It is advantageous, although not necessary, to ensure uniform point density throughout all items in the dataset during training. However, real-world acquired scans often exhibit non-uniform point density. To mitigate this, one can use the [ClassyVoxelizer](https://github.com/drethage/ClassyVoxelizer) tool to convert non-uniformly dense meshes or point clouds into uniformly-sampled point clouds. A 2cm sampling is recommended. During training, point-dropout augmentation is used to improve generalizability to non-uniform point density.
 
 ### ScanNet
 

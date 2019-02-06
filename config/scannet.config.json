@@ -2,7 +2,7 @@
     "dataset": {
         "classes": ["wall", "floor", "cabinet", "bed", "chair", "sofa", "table", "door", "window", "bookshelf", "picture", "counter", "desk", "curtain", "refridgerator", "showercurtain", "toilet", "sink", "bathtub", "otherfurniture"],
         "original_file_suffix": "_vh_clean_2.labels.ply",
-        "path": "/home/dario/fcpn/datasets/scannet/", 
+        "path": "", 
         "refresh_cache": true, 
         "special_weights": {
             "empty": 0.0001, 
@@ -71,7 +71,7 @@
         "spatial_pool_radius": 1.5
     },  
     "training": {
-        "batch_size": 4, 
+        "batch_size": 8, 
         "checkpoint_path": "", 
         "checkpoints_to_keep": 1000, 
         "data_augmentation": {

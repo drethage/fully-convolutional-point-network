@@ -30,11 +30,15 @@ cat metadata/test_split.txt | while read scene; do
     output_suffix="_vh_clean_2.uniform_2cm.ply"
     mkdir data/$scene
     mv scans_test/$scene/$scene$input_suffix data/$scene/$scene$input_suffix
-    ClassyVoxelizer/bin/cdlassy_voxelizer data/$scene/$scene$input_suffix data/$scene/$scene$output_suffix 0.02 labels false
+    ClassyVoxelizer/bin/classy_voxelizer data/$scene/$scene$input_suffix data/$scene/$scene$output_suffix 0.02 none false
     echo "Subsampled: $scene"
 done
 
+
+# Clean Up
+rm -r tasks
 rm -r scans
 rm -r scans_test
+rm -r scannetv2-labels.combined.tsv
 
 echo "Finished Subsampling ScanNet."

@@ -14,7 +14,7 @@ a) Textured mesh (not used) b) Input point cloud c) Semantic voxel segmentation
 ## Features
 
 * Hybrid (point-to-voxel) network architecture capable of processing arbitrarily large point clouds in a single pass
-* Operates on memory efficient input data representations (meshes/point clouds) while simultaneously avoiding the redundant computing and storing of spatial information
+* Operates on memory efficient input data representations (meshes/point clouds) while avoiding the redundant propagation of spatial information around points through the network (a limitation of point-based methods)
 * Operates on raw sensor data, no pre-processing/encoding necessary
 * Produces either an ordered output (voxelization) or maps predictions directly onto the input cloud, thus making it suitable as a general-purpose point cloud descriptor applicable to many 3D tasks
 * Evaluated on semantic voxel segmentation, semantic part segmentation and 3D scene captioning tasks
