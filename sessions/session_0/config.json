@@ -1,0 +1,138 @@
+{
+    "dataset": {
+        "classes": [
+            "wall", 
+            "floor", 
+            "cabinet", 
+            "bed", 
+            "chair", 
+            "sofa", 
+            "table", 
+            "door", 
+            "window", 
+            "bookshelf", 
+            "picture", 
+            "counter", 
+            "desk", 
+            "curtain", 
+            "refridgerator", 
+            "showercurtain", 
+            "toilet", 
+            "sink", 
+            "bathtub", 
+            "otherfurniture"
+        ], 
+        "empty_class_id": 20, 
+        "num_learnable_classes": 22, 
+        "original_file_suffix": "_vh_clean_2.labels.ply", 
+        "path": "/home/drethage/fully-convolutional-point-network/datasets/scannet/", 
+        "refresh_cache": true, 
+        "special_weights": {
+            "empty": 0.0001, 
+            "masked": 0.001
+        }, 
+        "training_samples": {
+            "num_points": 100000, 
+            "spatial_size": [
+                3.0, 
+                3.0, 
+                3.0
+            ]
+        }, 
+        "uniform_file_suffix": "_vh_clean_2.labels.uniform_2cm.ply", 
+        "validity_thresholds": {
+            "empty": 0.0001, 
+            "masked": 0.25
+        }
+    }, 
+    "model": {
+        "filters": {
+            "abstraction": {
+                "15cm_to_30cm": [
+                    128, 
+                    192
+                ], 
+                "30cm_to_60cm": [
+                    256, 
+                    512
+                ], 
+                "points_to_15cm": [
+                    64, 
+                    96
+                ]
+            }, 
+            "skip": {
+                "15cm": 256, 
+                "180cm": 256, 
+                "30cm": 256, 
+                "45cm": 256, 
+                "60cm": 256, 
+                "90cm": 256, 
+                "spatial_pool": 256
+            }, 
+            "upsampling": {
+                "15cm_to_5cm": [
+                    64
+                ], 
+                "30cm_to_15cm": [
+                    192, 
+                    128, 
+                    128
+                ], 
+                "60cm_to_30cm": [
+                    256, 
+                    256, 
+                    192
+                ]
+            }
+        }, 
+        "output_voxel_size": 0.05, 
+        "pointnet": {
+            "neighbors": 64, 
+            "num": 8000, 
+            "spacing": 0.15
+        }, 
+        "spatial_pool_radius": 1.5
+    }, 
+    "training": {
+        "batch_size": 4, 
+        "checkpoint_path": "", 
+        "checkpoints_to_keep": 1000, 
+        "data_augmentation": {
+            "jitter": {
+                "max": 0.01, 
+                "sigma": 0.005
+            }, 
+            "random_dropout": {
+                "max": 0.95
+            }, 
+            "random_rotation": true, 
+            "shuffle": true
+        }, 
+        "description": "Trained on ScanNet V2 for ScanNet 3D Semantic Labeling benchmark", 
+        "finetune_on_new_classes": false, 
+        "gpu": {
+            "allow_growth": true, 
+            "allow_soft_placement": true, 
+            "id": 0
+        }, 
+        "log_every_n_batches": 10, 
+        "max_epochs": 250, 
+        "optimizer": {
+            "batch_normalization": {
+                "decay_rate": 0.7, 
+                "decay_step": 600000, 
+                "initial_decay": 0.5
+            }, 
+            "learning_rate": {
+                "decay_rate": 0.7, 
+                "decay_step": 600000, 
+                "initial": 0.001
+            }
+        }, 
+        "save_every_n_batches": 500, 
+        "session_dir": "sessions/session_0", 
+        "session_id": 0, 
+        "train_upsampling_only": false
+    }
+}

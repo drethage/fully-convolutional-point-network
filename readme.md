@@ -1,9 +1,11 @@
 Fully-Convolutional Point Networks for Large-Scale Point Clouds
 ====
 
-End-to-end deep learning on large-scale real-world 3D data for semantic segmentation and scene captioning.
+End-to-end deep learning on real-world 3D data for semantic segmentation and scene captioning.
 
 [Paper](https://arxiv.org/abs/1808.06840) by Dario Rethage, Johanna Wald, Jürgen Sturm, Nassir Navab and Federico Tombari.
+
+As of 21.03.2019: Best performing geometry-only method on the [ScanNet 3D Semantic Labeling Benchmark](http://kaldir.vc.in.tum.de/scannet_benchmark/)
 
 ## Example
 
@@ -42,6 +44,8 @@ Training sessions are differentiated from one another by a session ID defined in
 
 To start training: `python main.py --mode train --config <path_to_config_file>`. Training will begin after the dataset is prepared for training (a cache will be saved to disk).
 
+Alternatively, there is a pre-trained model available in the `sessions/` folder for quickly trying out on your own data.
+
 ### Evaluation
 
 To evaluate a model we present every item in the validation set to the most recent checkpoint present in a session folder, and calculate the intersection-over-union (IoU) over all learnable classes.
@@ -52,7 +56,7 @@ To begin evaluation: `python main.py --mode evaluate --config <path_to_config_fi
 
 After training and evaluating a model, we may wish to predict on unseen data.
 
-To predict on a new mesh or point cloud: `python main.py --mode predict --file <path_to_PLY_file>`. Optionally, specify which device to use by setting the `--device` flag to *cpu* or *gpu*. Optionally, use a custom set of colors to represent distinct classes by giving the path to a colors.txt file via `--colors`.
+To predict on a new mesh or point cloud: `python main.py --mode predict --config <path_to_config_file> --file <path_to_PLY_file>`. Optionally, specify which device to use by setting the `--device` flag to *cpu* or *gpu*. Optionally, use a custom set of colors to represent distinct classes by giving the path to a colors.txt file via `--colors`.
 
 ## Citation
 
@@ -68,6 +72,7 @@ If you find our work useful, please consider citing:
 
 ## Updates
 
+* March 2019: Pre-trained model published for Semantic Voxel Segmentation
 * February 2019: Code published for Semantic Voxel Segmentation
 * September 2018: Paper published
 
